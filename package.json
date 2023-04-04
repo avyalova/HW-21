@@ -1,0 +1,50 @@
+{
+  "name": "hw-21",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "cy:open": "npx cypress open",
+    "cy:run": "cypress run",
+    "cy:dashboardrun:cloud": "npx cypress run --record --key b5c01268-d2a1-49ee-8715-b3911c2eaab5",
+    "cy:local:folder1": "npx cypress run --spec 'cypress/e2e/folder1/*.*'",
+    "cy:folder1:cloud": "npx cypress run --spec 'cypress/e2e/folder1/*.js' --record --key b5c01268-d2a1-49ee-8715-b3911c2eaab5",
+    "cy:local:folder2": "npx cypress run --spec 'cypress/e2e/folder2/*.*'",
+    "cy:folder2:cloud": "npx cypress run --spec 'cypress/e2e/folder2/*.js' --record --key b5c01268-d2a1-49ee-8715-b3911c2eaab5",
+    "cy:local:parallel": "npm run cy:local:folder1 -- --browser chrome  '&'  npm run cy:local:folder2 -- --browser electron",
+    "cy:cloud:parallel": "npm run cy:folder1:cloud -- --browser chrome --group Folder1 --ci-build-id 10 --parallel '&' npm run cy:folder2:cloud -- --browser chrome --group Folder2 --ci-build-id 10 --parallel",
+    "cy:folder1:chrome:config13d:cloud": "npx cypress run --spec 'cypress/e2e/folder1/*.js' --browser chrome --config-file cypress13d.config.js --record --key b5c01268-d2a1-49ee-8715-b3911c2eaab5",
+    "cy:folder1:chrome:config24d:cloud": "npx cypress run --spec 'cypress/e2e/folder1/*.js' --browser chrome --config-file cypress24d.config.js --record --key b5c01268-d2a1-49ee-8715-b3911c2eaab5"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AlenBiz/21-1.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AlenBiz/21-1/issues"
+  },
+  "homepage": "https://github.com/AlenBiz/21-1#readme",
+  "devDependencies": {
+    "cypress": "^12.5.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AlenBiz/21-1.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AlenBiz/21-1/issues"
+  },
+  "homepage": "https://github.com/AlenBiz/21-1#readme",
+  "devDependencies": {
+    "cypress": "^12.5.0"
+  },
+  "author": "Vyalovs",
+  "license": "ISC",
+  "devDependencies": {
+    "cypress": "^12.9.0"
+  }
+}
