@@ -6,15 +6,16 @@
   "scripts": {
     "cy:open": "npx cypress open",
     "cy:run": "cypress run",
+    "cy:parallel": "cypress-parallel -s cy:run -t 2 -d ",
     "cy:local:folder1": "npx cypress run --browser chrome --spec 'cypress/e2e/folder1/*.*'",
     "cy:local:folder2": "npx cypress run --browser electron --spec 'cypress/e2e/folder2/*.*'",
     "cy:folder1:cloud": "npm run cy:local:folder1 -- --record --key b5c01268-d2a1-49ee-8715-b3911c2eaab5",
     "cy:folder2:cloud": "npm run cy:local:folder2 -- --record --key b5c01268-d2a1-49ee-8715-b3911c2eaab5",
     "cy:local:parallel": "npm run cy:local:folder1 & npm run cy:local:folder2",
-    "cy:cloud:parallel": "npm run cy:folder1:cloud -- --group test1 --ci-build-id 6 --parallel '&' npm run cy:folder2:cloud -- --group test2 --ci-build-id 6 --parallel",
+    "cy:cloud:parallel": "npm run cy:folder1:cloud -- --group test1 --ci-build-id %BUILD_ID% --parallel & npm run cy:folder2:cloud -- --group test2 --ci-build-id %BUILD_ID% --parallel",
     "cy:folder1:chrome:config13d:cloud": "npm run cy:folder1:cloud --config-file cypress13d.config.js",
     "cy:folder2:electron:comfig24d:cloud": "npm run cy:folder2:cloud --config-file cypress24d.config.js",
-    "cy:parallel:config13d:folder2:electron:comfig24d:cloud": "npm run cy:folder1:chrome:config13d:cloud -- --group chrome --ci-build-id 27 --parallel '&' npm run cy:folder2:electron:comfig24d:cloud -- --group electron --ci-build-id 27 --parallel"
+    "cy:parallel:config13d:folder2:electron:comfig24d:cloud": "npm run cy:folder1:chrome:config13d:cloud -- --group chrome --ci-build-id %BUILD_ID% --parallel & npm run cy:folder2:electron:comfig24d:cloud -- --group electron --ci-build-id %BUILD_ID% --parallel"
   },
   "repository": {
     "type": "git"
@@ -26,9 +27,7 @@
   },
   "homepage": "",
   "devDependencies": {
-    "cypress": "^12.5.0"
-  },
-  "dependencies": {
+    "cypress": "^12.5.0",
     "cypress-parallel": "^0.12.0"
   }
 }
