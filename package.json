@@ -17,9 +17,10 @@
     "cy:folder2:electron:comfig24d:cloud": "npm run cy:folder2:cloud --config-file cypress24d.config.js",
     "cy:parallel:config13d:folder2:electron:comfig24d:cloud": "npm run cy:folder1:chrome:config13d:cloud -- --group chrome --ci-build-id %BUILD_ID% --parallel & npm run cy:folder2:electron:comfig24d:cloud -- --group electron --ci-build-id %BUILD_ID% --parallel",
     "allure:delete:reports": "rmdir /q /s allure-results &&rmdir /q /s allure-report",
-    "allure:get:results": "npx run cypress run --env allure=true",
+    "allure:get:results": "cypress run --env allure=true",
     "allure:report": "allure generate allure-results --clean -o allure-report",
-    "allure:open:report": "allure open"
+    "allure:open:report": "allure open",
+    "allure:run": "npm run allure:delete:reports & npm run allure:get:results & npm run allure:report & npm run allure:open:report"
   },
   "repository": {
     "type": "git"
