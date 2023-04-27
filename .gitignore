@@ -33,3 +33,4 @@ cypress/screenshots
 
 #key
 key.js
+test-results.xml
