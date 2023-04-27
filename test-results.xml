@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="Mocha Tests" time="0.181" tests="1" failures="1">
+  <testsuite name="Root Suite" timestamp="2023-04-26T20:26:31" tests="0" file="cypress\e2e\folder2\testFolder2.cy.js" time="0.000" failures="0">
+  </testsuite>
+  <testsuite name="test main page" timestamp="2023-04-26T20:26:31" tests="1" time="0.169" failures="1">
+    <testcase name="test main page passes" time="0.000" classname="passes">
+      <failure message="expected 2 to equal 4" type="AssertionError"><![CDATA[AssertionError: expected 2 to equal 4
+    at Context.eval (webpack:///./cypress/e2e/folder2/testFolder2.cy.js:4:17)
+
+      + expected - actual
+
+      -2
+      +4
+      ]]></failure>
+    </testcase>
+  </testsuite>
+</testsuites>

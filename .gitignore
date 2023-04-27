@@ -30,3 +30,6 @@ cypress/screenshots
 
 #jenkins
 .war
+
+#key
+key.js
